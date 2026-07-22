@@ -137,4 +137,7 @@ public class Cita {
         StringCustomUtils.validarTamanio(sintomas, 20, 500, "La descripción de los síntomas debe tener entre 20 y 500 caracteres");
     }
 
+
+    ///
+
 }
