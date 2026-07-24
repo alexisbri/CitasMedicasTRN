@@ -1,12 +1,12 @@
 package com.alexis.medicos.service;
 
 import com.alexis.commons.dto.medicos.MedicoRequest;
-import com.alexis.medicos.dto.Medico.MedicoResponse;
+import com.alexis.commons.dto.medicos.MedicoResponse;
+import com.alexis.commons.exceptions.RecursoNoEncontradoException;
 import com.alexis.medicos.entity.Medico;
 import com.alexis.medicos.enums.DisponibilidadMedico;
 import com.alexis.medicos.enums.EspecialidadMedico;
 import com.alexis.medicos.enums.EstadoRegistro;
-import com.alexis.medicos.exceptions.RecursoNoEncontradoException;
 import com.alexis.medicos.mapper.MedicoMapper;
 import com.alexis.medicos.repository.MedicoRepository;
 import lombok.AllArgsConstructor;
@@ -44,6 +44,7 @@ public class MedicoServiceImpl implements MedicoService {
     public MedicoResponse obtenerPorId(Long id) {
         return medicoMapper.entidadAResponse(obtenerMedicoActivoOException(id));
     }
+
 
     @Override
     @Transactional(readOnly = true)
@@ -85,6 +86,7 @@ public class MedicoServiceImpl implements MedicoService {
         validarCambiosUnicos(request, id);
 
         log.info("Actualizando Medico con id: " + id + ".");
+
         medico.actualizar(
                 request.nombre(),
                 request.apellidoPaterno(),
@@ -111,6 +113,10 @@ public class MedicoServiceImpl implements MedicoService {
         log.info("Médico con id " + id + " ha sido eliminado", id);
 
     }
+
+
+
+    /// METODOS PRIVADOS
 
 
 
@@ -177,28 +183,37 @@ public class MedicoServiceImpl implements MedicoService {
     public void validarCambiosUnicos(MedicoRequest request, Long id) {
 
         log.info("Validando cambio en email único...");
+
         if (medicoRepository.existsByEmailIgnoreCaseAndEstadoRegistroAndIdNot(
+
                 request.email().trim(), EstadoRegistro.ACTIVO, id)) {
+
             throw new IllegalArgumentException("Ya existe un médico activo registrado con el email: " +
                     request.email());
+
         }
 
         log.info("Validando cambio en teléfono único...");
         if (medicoRepository.existsByTelefonoAndEstadoRegistroAndIdNot(
+
                 request.telefono().trim(), EstadoRegistro.ACTIVO, id)) {
+
             throw new IllegalArgumentException("Ya existe un médico activo registrado con el teléfono: " +
                     request.telefono());
+
         }
 
         log.info("Validando cambio en cédula profesional única...");
+
         if (medicoRepository.existsByCedulaProfesionalIgnoreCaseAndEstadoRegistroAndIdNot(
+
                 request.cedulaProfesional().trim(), EstadoRegistro.ACTIVO, id)) {
+
             throw new IllegalArgumentException("Ya existe un médico activo registrado con la cédula profesional: " +
                     request.cedulaProfesional());
+
         }
+
     }
-
-
-
 
 }

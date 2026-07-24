@@ -2,7 +2,8 @@ package com.alexis.medicos.mapper;
 
 
 import com.alexis.commons.dto.medicos.MedicoRequest;
-import com.alexis.medicos.dto.Medico.MedicoResponse;
+import com.alexis.commons.dto.medicos.MedicoResponse;
+import com.alexis.commons.mapper.CommonMapper;
 import com.alexis.medicos.entity.Medico;
 import com.alexis.medicos.enums.DisponibilidadMedico;
 import com.alexis.medicos.enums.EstadoRegistro;

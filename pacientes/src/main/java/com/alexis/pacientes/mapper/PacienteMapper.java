@@ -1,9 +1,9 @@
 package com.alexis.pacientes.mapper;
 
+import com.alexis.commons.dto.paciente.PacienteRequest;
+import com.alexis.commons.dto.paciente.PacienteResponse;
 import com.alexis.commons.enums.EstadoRegistro;
 import com.alexis.commons.mapper.CommonMapper;
-import com.alexis.pacientes.dto.PacienteRequest;
-import com.alexis.pacientes.dto.PacienteResponse;
 import com.alexis.pacientes.entity.Paciente;
 import org.springframework.stereotype.Component;
 

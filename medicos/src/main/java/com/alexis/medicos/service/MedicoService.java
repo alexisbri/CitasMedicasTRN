@@ -1,8 +1,8 @@
 package com.alexis.medicos.service;
 
+import com.alexis.commons.dto.medicos.MedicoResponse;
 import com.alexis.commons.service.CrudService;
 import com.alexis.commons.dto.medicos.MedicoRequest;
-import com.alexis.medicos.dto.Medico.MedicoResponse;
 
 public interface MedicoService extends CrudService<MedicoRequest, MedicoResponse> {
 

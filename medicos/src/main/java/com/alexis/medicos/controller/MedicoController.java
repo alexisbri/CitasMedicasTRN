@@ -2,7 +2,7 @@ package com.alexis.medicos.controller;
 
 import com.alexis.commons.controller.CommonController;
 import com.alexis.commons.dto.medicos.MedicoRequest;
-import com.alexis.medicos.dto.Medico.MedicoResponse;
+import com.alexis.commons.dto.medicos.MedicoResponse;
 import com.alexis.medicos.service.MedicoService;
 import jakarta.validation.constraints.Positive;
 import org.springframework.http.ResponseEntity;

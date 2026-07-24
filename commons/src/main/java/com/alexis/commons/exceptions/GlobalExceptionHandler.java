@@ -20,8 +20,10 @@ import java.util.NoSuchElementException;
 public class GlobalExceptionHandler {
 
 
+
     @ExceptionHandler(FeignException.class)
     public ResponseEntity<CustomErrorResponse> handleGenericFeignException(FeignException e) {
+
         log.error("Error en la comunicación Feign: " + e.getMessage());
 
         int status = e.status() > 0 ? e.status() : HttpStatus.INTERNAL_SERVER_ERROR.value();

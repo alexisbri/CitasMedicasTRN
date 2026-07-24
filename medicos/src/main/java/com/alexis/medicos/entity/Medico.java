@@ -1,10 +1,10 @@
 package com.alexis.medicos.entity;
 
+import com.alexis.commons.utils.StringCustomUtils;
+import com.alexis.commons.utils.ValoresNumericosUtils;
 import com.alexis.medicos.enums.DisponibilidadMedico;
 import com.alexis.medicos.enums.EspecialidadMedico;
 import com.alexis.medicos.enums.EstadoRegistro;
-import com.alexis.medicos.utils.StringCustomUtils;
-import com.alexis.medicos.utils.ValoresNumericosUtils;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

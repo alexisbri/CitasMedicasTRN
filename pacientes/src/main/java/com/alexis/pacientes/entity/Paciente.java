@@ -101,7 +101,7 @@ public class Paciente {
                 "El email es requerido y debe tener entre 1 y 100 caracteres");
 
         StringCustomUtils.validarTamanio(telefono, 10, 10,
-                "El teléfono es requerido y debe tenerexactamente 10 caracteres");
+                "El teléfono es requerido y debe tener exactamente 10 caracteres");
 
         StringCustomUtils.validarTamanio(direccion, 1, 150,
                 "La dirección es requerida y debe tener entre 1 y 150 caracteres");

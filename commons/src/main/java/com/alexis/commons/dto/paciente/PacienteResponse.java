@@ -13,5 +13,4 @@ public record PacienteResponse(
         String direccion,
         String numExpediente
 
-) {
-}
+) {}
