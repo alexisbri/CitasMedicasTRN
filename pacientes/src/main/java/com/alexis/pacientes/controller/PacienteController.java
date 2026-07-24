@@ -2,8 +2,8 @@ package com.alexis.pacientes.controller;
 
 import com.alexis.commons.controller.CommonController;
 import com.alexis.pacientes.Service.PacienteService;
-import com.alexis.pacientes.dto.PacienteRequest;
-import com.alexis.pacientes.dto.PacienteResponse;
+import com.alexis.commons.dto.paciente.PacienteRequest;
+import com.alexis.commons.dto.paciente.PacienteResponse;
 import jakarta.validation.constraints.Positive;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -24,4 +24,5 @@ public class PacienteController extends CommonController<PacienteRequest, Pacien
             @PathVariable @Positive(message = "El ID debe ser positivo") Long id) {
         return ResponseEntity.ok(service.obtenerPacientePorIdSinEstado(id));
     }
+
 }
